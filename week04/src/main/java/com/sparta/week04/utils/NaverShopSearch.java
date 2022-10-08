@@ -8,14 +8,13 @@ import org.springframework.web.client.RestTemplate;
 
 
 import org.springframework.http.*;
-import org.springframework.web.client.RestTemplate;
 
 public class NaverShopSearch {
-    public String search(){
+    public String search(String 아이맥){
         RestTemplate rest = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
-        headers.add("X-Naver-Client-Id", "발급받은 Client ID");
-        headers.add("X-Naver-Client-Secret", "발급받은 Client Secret");
+        headers.add("X-Naver-Client-Id", "jySUWjvzAV8jTozJs89j");
+        headers.add("X-Naver-Client-Secret", "wbVVwWGu5E");
         String body = "";
 
         HttpEntity<String> requestEntity = new HttpEntity<String>(body, headers);
@@ -30,6 +29,6 @@ public class NaverShopSearch {
     }
     public static void main(String[] args){
         NaverShopSearch naverShopSearch = new NaverShopSearch();
-        naverShopSearch.search();
+        naverShopSearch.search("아이맥");
     }
 }
