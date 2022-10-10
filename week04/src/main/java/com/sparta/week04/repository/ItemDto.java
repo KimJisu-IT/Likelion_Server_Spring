@@ -1,7 +1,7 @@
 package com.sparta.week04.repository;
 
 import lombok.Getter;
-import org.json.simple.JSONObject;
+import org.json.JSONObject;
 
 @Getter
 public class ItemDto {

@@ -1,8 +1,8 @@
 package com.sparta.week04.utils;
 
 import com.sparta.week04.repository.ItemDto;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.http.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -45,9 +45,3 @@ public class NaverShopSearch {
 
     }
 }
-    /*
-    public static void main(String[] args){
-        NaverShopSearch naverShopSearch = new NaverShopSearch();
-        naverShopSearch.search("아이맥");
-    }
-    */
