@@ -5,17 +5,17 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Getter // get 함수를 일괄적으로 만들어줍니다.
-@NoArgsConstructor // 기본 생성자를 만들어줍니다.
-@Entity // DB 테이블 역할을 합니다.
+@Getter // get 함수를 일괄적으로 생성
+@NoArgsConstructor // 기본 생성자
+@Entity // DB 테이블 역할
 public class Product extends Timestamped{
 
-    // ID가 자동으로 생성 및 증가합니다.
+    // ID가 자동으로 생성 및 증가
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     private Long id;
 
-    // 반드시 값을 가지도록 합니다.
+    // 반드시 값을 가지도록
     @Column(nullable = false)
     private String title;
 
@@ -31,7 +31,7 @@ public class Product extends Timestamped{
     @Column(nullable = false)
     private int myprice;
 
-    // 관심 상품 생성 시 이용합니다.
+    // 관심 상품 생성 시 이용
     public Product(ProductRequestDto requestDto) {
         this.title = requestDto.getTitle();
         this.image = requestDto.getImage();
@@ -40,8 +40,15 @@ public class Product extends Timestamped{
         this.myprice = 0;
     }
 
-    // 관심 가격 변경 시 이용합니다.
+    // 관심 가격 변경 시 이용
     public void update(ProductMypriceRequestDto requestDto) {
         this.myprice = requestDto.getMyprice();
+    }
+
+    public void updateByItemDto(ItemDto itemDto) {
+        this.title=itemDto.getTitle();
+        this.image=itemDto.getImage();
+        this.link=itemDto.getLink();
+        this.lprice=itemDto.getLprice();
     }
 }
